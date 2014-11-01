@@ -3,7 +3,7 @@
 using namespace std;
 
 namespace forge {
-    vector<string> split(const string &value, char delimeter = ' ')
+    vector<string> split(const string &value, char delimeter)
     {
         vector<string> result;
 
