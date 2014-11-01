@@ -1,5 +1,5 @@
 #include "../include/split.h"
-
+#include <iostream>
 using namespace std;
 
 namespace forge {
@@ -7,13 +7,16 @@ namespace forge {
     {
         vector<string> result;
 
-        uint32_t oldPos = 0;
-        uint32_t newPos = 0;
+        string::size_type oldPos = 0;
+        string::size_type newPos = 0;
 
-        while ((newPos = value.find(delimeter), oldPos) != string::npos) {
+        int i = 0;
+        bool flag = true;
+        while ((newPos = value.find(delimeter, oldPos)) != string::npos) {
             result.push_back( value.substr(oldPos, (newPos - oldPos)) );
-            oldPos = newPos;
+            oldPos = newPos+1;
         }
+        result.push_back( value.substr(oldPos, (value.size() - oldPos)) );
         return result;
     }
 }
