@@ -6,8 +6,8 @@
 #include <locale>
 
 namespace forge {
-    inline std::string &ltrim(std::string &s);
-    inline std::string &rtrim(std::string &s);
-    inline std::string &trim(std::string &s);
+    std::string &ltrim(std::string &s);
+    std::string &rtrim(std::string &s);
+    std::string &trim(std::string &s);
 }
 #endif //TRIM_H
