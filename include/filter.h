@@ -4,6 +4,10 @@
 #include <vector>
 
 namespace forge {
+    /**
+        Methods filters specified vector by specified function and returns
+        results.
+     */
     template<typename T>
     std::vector<T> filter(std::function<bool (const T& value)> func,
         const std::vector<T>& array)
