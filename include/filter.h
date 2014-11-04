@@ -2,7 +2,6 @@
 #define FILTER_H
 #include <functional>
 #include <vector>
-#include <string>
 
 namespace forge {
     template<typename T>
@@ -10,9 +9,9 @@ namespace forge {
         const std::vector<T>& array)
     {
         std::vector<T> items;
-        for(T item: array) {
-            if (func(item)){
-                items.push_back(item);
+        for(uint32_t i=0; i<array.size(); ++i) {
+            if (func(array.at(i))){
+                items.push_back(array.at(i));
             }
         }
         return items;
