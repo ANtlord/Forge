@@ -21,6 +21,7 @@ namespace forge {
         return items;
     }
 
+    void filter(std::function<bool (char &value)> func, std::string &value);
 }
 
 #endif //FILTER_H
