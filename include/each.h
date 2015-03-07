@@ -46,7 +46,7 @@ namespace forge {
     }
 
     /** \brief Method run over specified array and makes specified function
-     * with changing specified vector.
+     * with changing specified array.
      */
     template<typename T>
     void each(std::function<void (T& value)> func, T array[], uint32_t n)
@@ -55,6 +55,18 @@ namespace forge {
             func(array[i]);
         }
     }
-}
 
+    /** \brief Method run over specified array and makes specified function
+     * without changing specified array.
+     */
+    template<typename T>
+    T * each(std::function<T (const T& value)> func, const T array[], uint32_t n)
+    {
+        T * res = new T[n];
+        for(uint32_t i=0; i<n; ++i) {
+            res[i] = func(array[i]);
+        }
+        return res;
+    }
+}
 #endif //EACH_H
