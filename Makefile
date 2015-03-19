@@ -27,8 +27,7 @@ all: $(SOURCES) $(TARGET)
 $(OBJECTS): | $(OBJ_DIR)
 
 $(OBJ_DIR):
-	mkdir obj
-	mkdir $@
+	mkdir -p $@/src
 
 $(TARGET): $(OBJECTS)
 	$(CC) -o $@ $(OBJECTS)
